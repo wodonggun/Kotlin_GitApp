@@ -3,7 +3,7 @@
 This App is made by kotlin Language and java
 
 
-With the help of TawHwan(Android Developer)
+With the help of TaeHwan(Android Developer)
 
 # Screenshots
 ----------- 
