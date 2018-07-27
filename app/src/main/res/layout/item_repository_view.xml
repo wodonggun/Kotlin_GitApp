@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="tech.thdev.Kotlin_github.view.main.search.adapter.holder.viewmodel.SearchHolderViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:onClick="@{() -> viewModel.onClick()}"
+        android:paddingStart="10dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/img_user_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:imageFromUrl="@{viewModel.imageUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{viewModel.getFullName}"
+            android:textColor="#0b4cc4"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
+            tools:text="Odaym/Tetris" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="@{viewModel.getDescription}"
+            android:textColor="#535353"
+            android:textSize="13sp"
+            android:visibility="@{viewModel.isShowDescription}"
+            app:layout_constraintBottom_toTopOf="@+id/tv_language"
+            app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_full_name"
+            tools:text="Tetris game for Android, using Kotlin ajdfkajdkrjkqejrklajsdfklzajdklfjzklcjflkajdlkrfjqlkejtkladjflkqjektlrjakdlfjklq adjfkqjetkljalkdfj" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{viewModel.getLanguage}"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.isShowLanguage}"
+            app:layout_constraintBottom_toTopOf="@+id/view_divider"
+            app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            tools:text="kotlin" />
+
+        <TextView
+            android:id="@+id/tv_star_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/ic_star"
+            android:drawablePadding="4dp"
+            android:text="@{viewModel.getStargazersCount}"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.isStargazersCount}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_language"
+            app:layout_constraintStart_toEndOf="@+id/tv_language"
+            app:layout_constraintTop_toTopOf="@+id/tv_language"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/tv_fork_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/ic_code_fork"
+            android:drawablePadding="4dp"
+            android:text="@{viewModel.getForksCount}"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.isForksCount}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_star_count"
+            app:layout_constraintStart_toEndOf="@+id/tv_star_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_star_count"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/tv_license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:drawablePadding="4dp"
+            android:text="@{viewModel.getLicense}"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.isLicenseVisibility}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_fork_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_fork_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_fork_count"
+            tools:text="Apache license 2.0" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="#cacaca"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

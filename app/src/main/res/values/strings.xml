@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Github App</string>
+
+    <string name="title_search">Search</string>
+    <string name="title_user_info">Info</string>
+    <string name="title_icon_made_by">Icons made by flaticon</string>
+    <string name="label_search">Search</string>
+    <string name="hint_search_repository">Search repository</string>
+    <string name="message_empty_view">No result repositories</string>
+</resources>
